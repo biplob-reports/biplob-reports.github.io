@@ -1,3 +1,4 @@
+css
 :root{
   --bg:#fff;
   --text:#111;
