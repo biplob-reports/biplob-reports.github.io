@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en">
-<head>
+<Biplob Kumar Das>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Biplob — Portfolio</title>
+  <Biplob>Biplob Kumar Das— Portfolio</title>
   <style>
     body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 16px; line-height: 1.6; }
     header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
@@ -16,7 +16,7 @@
 <body>
   <header>
     <div>
-      <h1>Your Name</h1>
+      <h1>Biplob Kumar Das</h1>
       <p class="muted">Independent investigative journalist interested reporting on politics and business.</p>
     </div>
     <nav>
