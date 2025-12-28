@@ -1,140 +1,246 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Biplob Kumar Das — Writing</title>
-  <meta name="description" content="Portfolio of reporting and writing by Biplob Kumar Das." />
-  <link rel="stylesheet" href="styles.css" />
-</head>
+:root{
+  --black:#000;
+  --white:#fff;
+  --purple:#7b4dff;
+  --muted:#333;
+  --max: 1100px;
 
-<body>
-  <!-- Top bar -->
-  <header class="topbar">
-    <a class="logo" href="/">Biplob Kumar DasE</a>
+  /* Font mapping */
+  --font-head: "Archivo Black", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-mast: "Graduate", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
-    <nav class="nav">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  /* Canva Sans is not publicly hostable by default.
+     Using Inter as a temporary body substitute. */
+  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
 
-  <main class="wrap">
-    <!-- Minimal hero -->
-    <section class="hero">
-      <p class="kicker">REPORTER</p>
-      <h1 class="title">Biplob Kumar Das</h1>
-      <p class="deck">
-        “I report on politics, businesses and immigrant communities.”
-      </p>
+/* Base */
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  color:var(--black);
+  background:var(--white);
+  font-family: var(--font-body);
+}
+a{ color:inherit; text-decoration:none; }
 
-      <div class="links">
-        <a href="mailto:biplobkumardas@protonmail.com">biplobkumardas@protonmail.com</a>
-        <span class="dot">•</span>
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
-        <span class="dot">•</span>
-        <a href="https://www.linkedin.com/in/BiplobKumarDas/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </section>
+/* COVER */
+.cover{ width:100%; position:relative; }
+.cover-link{
+  display:block;
+  position:relative;
+  height: 520px;
+  overflow:hidden;
+}
+.cover-bg{
+  position:absolute; inset:0;
+  background-image: url("assets/cover.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+}
 
-    <!-- Articles grid (simple, no categories) -->
-    <section id="work" class="work">
-      <div class="grid">
-        <!-- 1 -->
-        <article class="card">
-          <a href="https://prismreports.org/2025/11/12/rss-squire-patton-boggs-lobbying-congress/" target="_blank" rel="noopener">
-            <p class="pub">Prism</p>
-            <h2 class="headline">Exclusive: India’s largest far-right Hindu organization hires U.S. lobbyists for congressional influence campaign</h2>
-            <p class="meta">Nov 12, 2025</p>
-          </a>
-        </article>
+/* Top-left title: Graduate */
+.cover-top-left{
+  position:absolute;
+  top:26px; left:34px;
+  color:rgba(255,255,255,0.85);
+  font-family: var(--font-mast);
+  font-weight:400;
+  font-size:30px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  z-index:2;
+}
 
-        <!-- 2 -->
-        <article class="card">
-          <a href="https://documentedny.com/2025/11/04/halal-food-trucks-back-mamdani/" target="_blank" rel="noopener">
-            <p class="pub">Documented</p>
-            <h2 class="headline">Zohran Mamdani to Street Vendors: I’m Listening</h2>
-            <p class="meta">Nov 4, 2025</p>
-          </a>
-        </article>
+.cover-text{
+  position:absolute;
+  left:34px;
+  right:34px;
+  bottom:28px;
+  z-index:2;
+}
 
-        <!-- 3 -->
-        <article class="card">
-          <a href="https://documentedny.com/2025/10/27/cuomo-muslim-south-asian-islamophobic/" target="_blank" rel="noopener">
-            <p class="pub">Documented</p>
-            <h2 class="headline">Cuomo’s Outreach to South Asians Shadowed by Far-Right Anti-Muslim Ties</h2>
-            <p class="meta">Oct 27, 2025</p>
-          </a>
-        </article>
+/* Cover headline: Archivo Black */
+.cover-headline{
+  margin:0 0 10px 0;
+  color:var(--white);
+  text-transform:uppercase;
+  font-family: var(--font-head);
+  font-weight:400; /* Archivo Black only has one weight */
+  font-size:46px;
+  line-height:1.05;
+  letter-spacing:0.01em;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.25);
+}
 
-        <!-- 4 -->
-        <article class="card">
-          <a href="https://documentedny.com/2025/09/04/desi-storeowners-queens-trumps-tariffs-india/" target="_blank" rel="noopener">
-            <p class="pub">Documented</p>
-            <h2 class="headline">South Asian Storeowners ‘Doomed’ by Trump’s 50% Tariffs on India Imports</h2>
-            <p class="meta">Sep 4, 2025</p>
-          </a>
-        </article>
+/* Cover byline: body font (Canva Sans substitute) */
+.cover-byline{
+  margin:0;
+  color: var(--purple);
+  font-family: var(--font-body);
+  font-weight:700;
+  font-size:18px;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.25);
+}
 
-        <!-- 5 -->
-        <article class="card">
-          <a href="https://www.dropsitenews.com/p/modi-epstein-files-steve-bannon-india-trump-bjp" target="_blank" rel="noopener">
-            <p class="pub">DropSite News</p>
-            <h2 class="headline">“Modi on board”: Jeffrey Epstein Pressed Steve Bannon to Meet With Indian PM Shortly Before His Death</h2>
-            <p class="meta">DropSite News</p>
-          </a>
-        </article>
+/* NAV BAR UNDER COVER */
+.section-nav{
+  display:flex;
+  gap:34px;
+  justify-content:center;
+  align-items:center;
+  padding: 18px 12px;
+  border-bottom: 1px solid #e9e9e9;
+  font-family: var(--font-head);
+  font-weight:400;
+  letter-spacing:0.02em;
+  text-transform:uppercase;
+}
+.section-nav a{
+  font-size:16px;
+  padding: 6px 4px;
+}
+.section-nav a:hover{ text-decoration: underline; }
 
-        <!-- 6 -->
-        <article class="card">
-          <a href="https://www.dropsitenews.com/p/campaign-spending-mamdani-cuomo-billionaires-bill-ackman-new-york-city-mayoral-race" target="_blank" rel="noopener">
-            <p class="pub">DropSite News</p>
-            <h2 class="headline">The Money Versus Mamdani in the Final Stretch of NYC Mayoral Race</h2>
-            <p class="meta">DropSite News</p>
-          </a>
-        </article>
+/* INTRO */
+.intro{
+  max-width: var(--max);
+  margin: 0 auto;
+  text-align:center;
+  padding: 22px 18px 18px;
+}
 
-        <!-- 7 -->
-        <article class="card">
-          <a href="https://www.newindiaabroad.com/english/news/proud-of-my-hindu-heritage-mamdani-visits-nyc-temples-to-connect-with-supporters" target="_blank" rel="noopener">
-            <p class="pub">New India Abroad</p>
-            <h2 class="headline">“Proud of my Hindu Heritage”: Mamdani visits NYC temples to connect with supporters</h2>
-            <p class="meta">New India Abroad</p>
-          </a>
-        </article>
+/* Name: Archivo Black */
+.name{
+  margin: 6px 0 10px;
+  font-family: var(--font-head);
+  font-weight:400;
+  font-size:38px;
+  letter-spacing:0.02em;
+  text-transform:uppercase;
+}
 
-        <!-- 8 -->
-        <article class="card">
-          <a href="https://www.newindiaabroad.com/english/indian-diaspora-community/hindus-for-zohran-organizes-prayer-meet-for-mamdani-in-ny" target="_blank" rel="noopener">
-            <p class="pub">New India Abroad</p>
-            <h2 class="headline">Hindus For Zohran organizes prayer meet for Mamdani in NY</h2>
-            <p class="meta">New India Abroad</p>
-          </a>
-        </article>
-      </div>
-    </section>
+/* Contact: body font (Canva Sans substitute) */
+.contact{
+  margin: 0 auto 16px;
+  color: var(--purple);
+  font-family: var(--font-body);
+  font-size:14px;
+  font-weight:700;
+}
+.contact a{ color: var(--purple); }
+.contact a:hover{ text-decoration:underline; }
+.social{ margin-top:4px; }
 
-    <!-- About + Contact (simple) -->
-    <section id="about" class="simple">
-      <h2>About</h2>
-      <p>
-        I am an independent journalist based in New York City. I previously worked as a business correspondent for Reuters. In 2025, I graduated from the Columbia Journalism School with a Master's in Journalism. I report on stories at the intersection of politics and business with an investigative lens.
-      </p>
-    </section>
+/* Bio: body font (Canva Sans substitute) */
+.bio{
+  max-width: 860px;
+  margin: 0 auto;
+  font-family: var(--font-body);
+  font-size:18px;
+  line-height:1.6;
+  color: #444;
+}
 
-    <section id="contact" class="simple">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:biplobkumardas@protonmail.com">biplobkumardas@protonmail.com</a></p>
-    </section>
-  </main>
+/* PAGE */
+.page{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 8px 18px 60px;
+}
 
-  <footer class="footer">
-    <p>© <span id="y"></span> Biplob Kumar Das</p>
-  </footer>
+/* SECTION */
+.sec{ padding-top: 36px; }
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+/* Section titles: Archivo Black */
+.sec-title{
+  margin:0 0 18px;
+  font-family: var(--font-head);
+  font-weight:400;
+  letter-spacing:0.02em;
+  font-size:34px;
+  text-transform:uppercase;
+}
+
+/* STORY BLOCKS */
+.story{
+  display:grid;
+  grid-template-columns: 520px 1fr;
+  gap: 26px;
+  align-items:start;
+  padding: 18px 0;
+  border-top: 1px solid #ededed;
+}
+.story:first-of-type{ border-top:none; }
+
+.story-b{ grid-template-columns: 1fr 520px; }
+
+.story-img{
+  width:100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.story-text{ padding-top: 4px; }
+
+/* Headlines: Archivo Black */
+.story-headline{
+  margin:0 0 10px 0;
+  text-transform:uppercase;
+  font-family: var(--font-head);
+  font-weight:400;
+  font-size:30px;
+  line-height:1.05;
+}
+
+/* Byline + dek: Canva Sans substitute */
+.story-byline{
+  margin:0 0 8px 0;
+  color: var(--purple);
+  font-family: var(--font-body);
+  font-weight:700;
+  font-size:18px;
+}
+.story-pub{
+  margin:0 0 18px 0;
+  font-family: var(--font-body);
+  font-weight:700;
+  font-size:18px;
+  color:#111;
+}
+.story-dek{
+  margin:0;
+  font-family: var(--font-body);
+  font-size:18px;
+  line-height:1.55;
+  color:#333;
+}
+
+/* Hover */
+.story:hover .story-headline,
+.story:hover .story-byline,
+.story:hover .story-dek{
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer{
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid #ededed;
+  text-align:center;
+  color:#666;
+  font-family: var(--font-body);
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .cover-headline{ font-size: 38px; }
+  .story{ grid-template-columns: 1fr; }
+  .story-b{ grid-template-columns: 1fr; }
+  .story-img{ height: 240px; }
+  .section-nav{ gap:16px; flex-wrap:wrap; }
+}
