@@ -10,16 +10,16 @@
 <body>
   <!-- Top bar -->
   <header class="topbar">
-    <a class="logo" href="/">Biplob Kumar Das</a>
+    <a class="logo" href="/">Portfolio and Clips</a>
   </header>
 
   <main class="wrap">
     <!-- Minimal hero -->
     <section class="hero">
-      <p class="kicker">Reporting</p>
+      <p class="kicker">Features, investigations, and ground reports</p>
       <h1 class="title">Biplob Kumar Das</h1>
       <p class="deck">
-        “I report from the intersection of politics, business and immigration.”
+        I report from the intersection of politics, business and immigration.
       </p>
 
       <div class="links">
