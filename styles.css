@@ -62,7 +62,7 @@ a:hover{
 .contact{
   text-align:right;
   font-weight:700;
-  font-size:18px;
+  font-size:13px;
   line-height:1.35;
   margin-bottom:31px;
 }
@@ -73,8 +73,8 @@ a:hover{
 
 .photo-panel{
   position:relative;
-  height:768px;
-  width:680px;
+  height:668px;
+  width:580px;
   overflow:hidden;
 }
 
@@ -126,7 +126,7 @@ a:hover{
   position:relative;
   margin:0 0 28px;
   font-weight:700;
-  font-size:21px;
+  font-size:18px;
   line-height:1.45;
   color:#fff;
 }
