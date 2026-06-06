@@ -1,29 +1,30 @@
 :root{
   --black:#000;
   --white:#fff;
-  --green:#00d06f;
-  --purple:#8b4cff;
-  --yellow:#ffe75a;
+  --green:#00cf6a;
+  --purple:#8b4dff;
+  --yellow:#ffe45c;
   --orange:#ff7a00;
-  --gray:#8b8b8b;
+  --gray:#8d8d8d;
 
-  --font-head:"Archivo Black", system-ui, sans-serif;
-  --font-body:"Libre Baskerville", Georgia, serif;
+  --font-head:"Archivo Black", Arial Black, Impact, sans-serif;
+  --font-body:Georgia, "Times New Roman", serif;
 }
 
 *{
   box-sizing:border-box;
 }
 
-html{
-  scroll-behavior:smooth;
+html, body{
+  margin:0;
+  padding:0;
+  background:#000;
+  color:#fff;
 }
 
 body{
-  margin:0;
-  background:var(--black);
-  color:var(--white);
   font-family:var(--font-body);
+  overflow-x:hidden;
 }
 
 a{
@@ -35,29 +36,35 @@ a:hover{
   text-decoration:underline;
 }
 
+/* every screenshot-sized panel */
 .screen{
-  min-height:100vh;
-  background:var(--black);
+  width:100vw;
+  height:768px;
+  min-height:768px;
+  background:#000;
+  overflow:hidden;
 }
 
-/* HERO */
+/* =======================
+   PAGE 1
+======================= */
 
 .hero-screen{
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:685px 680px;
 }
 
 .bio-panel{
-  padding:24px 28px 40px 70px;
-  position:relative;
+  padding:24px 27px 0 72px;
+  height:768px;
 }
 
 .contact{
   text-align:right;
   font-weight:700;
-  font-size:17px;
-  line-height:1.4;
-  margin-bottom:30px;
+  font-size:18px;
+  line-height:1.35;
+  margin-bottom:31px;
 }
 
 .contact a{
@@ -66,6 +73,8 @@ a:hover{
 
 .photo-panel{
   position:relative;
+  height:768px;
+  width:680px;
   overflow:hidden;
 }
 
@@ -73,27 +82,31 @@ a:hover{
   width:100%;
   height:100%;
   object-fit:cover;
+  object-position:center center;
   filter:grayscale(100%);
   display:block;
 }
 
 .photo-panel h1{
   position:absolute;
-  top:28px;
-  left:30px;
+  top:31px;
+  left:31px;
   margin:0;
   font-family:var(--font-head);
   font-size:40px;
-  letter-spacing:0.08em;
   line-height:1;
-  color:#f6eaff;
+  letter-spacing:0.09em;
+  color:#f5eaff;
+  white-space:nowrap;
 }
 
-/* TIMELINE */
+/* =======================
+   TIMELINE
+======================= */
 
 .timeline{
   position:relative;
-  padding-left:28px;
+  padding-left:34px;
 }
 
 .timeline::before{
@@ -101,71 +114,133 @@ a:hover{
   position:absolute;
   left:8px;
   top:10px;
-  bottom:12px;
+  bottom:15px;
   width:4px;
-  background:var(--white);
-  border-radius:10px;
+  background:#fff;
+  border-radius:8px;
 }
 
 .timeline p,
 .timeline a{
-  position:relative;
   display:block;
-  font-weight:700;
-  font-size:20px;
-  line-height:1.55;
+  position:relative;
   margin:0 0 28px;
+  font-weight:700;
+  font-size:21px;
+  line-height:1.45;
+  color:#fff;
 }
 
 .timeline p::before,
 .timeline a::before{
   content:"";
   position:absolute;
-  left:-34px;
-  top:5px;
+  left:-35px;
+  top:3px;
   width:16px;
   height:16px;
-  border:4px solid var(--white);
-  background:var(--black);
+  border:4px solid #fff;
+  background:#000;
   border-radius:50%;
 }
 
 .bio-timeline p{
-  max-width:560px;
+  max-width:565px;
 }
 
-/* WORK SECTIONS */
+/* =======================
+   PAGE 2
+======================= */
 
 .work-screen{
-  padding:76px 76px 40px;
+  padding:77px 76px 0 77px;
 }
 
 .work-screen h2{
-  margin:0 0 32px;
+  margin:0 0 34px;
   font-family:var(--font-head);
   font-size:22px;
+  line-height:1;
   letter-spacing:0.02em;
 }
 
 .work-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  column-gap:84px;
-  row-gap:38px;
+  grid-template-columns:560px 560px;
+  column-gap:68px;
+  row-gap:43px;
 }
 
 .work-block h3{
-  margin:0 0 28px;
+  margin:0 0 29px;
   font-family:var(--font-head);
   font-size:22px;
-  letter-spacing:0.04em;
+  line-height:1;
+  letter-spacing:0.045em;
+}
+
+.work-block .timeline{
+  padding-left:22px;
+}
+
+.work-block .timeline::before{
+  left:0;
+  top:10px;
+  bottom:14px;
+  width:4px;
 }
 
 .work-block .timeline a{
-  font-size:24px;
+  font-size:25px;
   line-height:1.45;
-  margin-bottom:12px;
+  margin-bottom:6px;
 }
+
+.work-block .timeline a::before{
+  left:-29px;
+  top:3px;
+}
+
+/* =======================
+   PAGE 3
+======================= */
+
+.reuters-screen{
+  padding:79px 0 0 77px;
+}
+
+.reuters-block{
+  width:650px;
+}
+
+.reuters-block h3{
+  margin-bottom:37px;
+}
+
+.reuters-block .timeline{
+  padding-left:17px;
+}
+
+.reuters-block .timeline::before{
+  left:0;
+  top:8px;
+  bottom:45px;
+}
+
+.reuters-block .timeline a{
+  font-size:25px;
+  line-height:1.45;
+  margin-bottom:31px;
+}
+
+.reuters-block .timeline a::before{
+  left:-28px;
+  top:3px;
+}
+
+/* =======================
+   COLORS
+======================= */
 
 .green{ color:var(--green); }
 .purple{ color:var(--purple); }
@@ -173,55 +248,60 @@ a:hover{
 .orange{ color:var(--orange); }
 .gray{ color:var(--gray); }
 
-/* REUTERS PAGE */
+/* =======================
+   RESPONSIVE FALLBACK
+======================= */
 
-.reuters-screen{
-  padding:78px 76px;
-}
+@media (max-width:1100px){
+  .screen{
+    height:auto;
+    min-height:100vh;
+    overflow:visible;
+  }
 
-.reuters-block{
-  max-width:620px;
-}
-
-.reuters-block .timeline a{
-  font-size:24px;
-  line-height:1.45;
-  margin-bottom:28px;
-}
-
-/* RESPONSIVE */
-
-@media (max-width:900px){
   .hero-screen{
-    grid-template-columns:1fr;
+    display:flex;
+    flex-direction:column-reverse;
   }
 
   .photo-panel{
-    min-height:420px;
+    width:100%;
+    height:520px;
   }
 
-  .bio-panel,
-  .work-screen,
-  .reuters-screen{
-    padding:34px 24px;
+  .bio-panel{
+    height:auto;
+    padding:28px 24px 50px;
   }
 
   .contact{
     text-align:left;
   }
 
+  .work-screen,
+  .reuters-screen{
+    padding:56px 24px;
+  }
+
   .work-grid{
     grid-template-columns:1fr;
-    gap:42px;
+    row-gap:42px;
+  }
+
+  .work-block,
+  .reuters-block{
+    width:100%;
   }
 
   .photo-panel h1{
-    font-size:30px;
+    font-size:31px;
+    left:24px;
   }
 
   .timeline p,
   .timeline a,
-  .work-block .timeline a{
-    font-size:18px;
+  .work-block .timeline a,
+  .reuters-block .timeline a{
+    font-size:20px;
   }
 }
