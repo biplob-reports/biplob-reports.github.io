@@ -296,11 +296,28 @@ a:hover{ text-decoration:underline; }
   }
 
   .work-banner{
-    font-size:52px;
-    line-height:1.1;
-    height:auto;
-    padding:20px 24px;
-  }
+  position:relative;
+
+  width:100vw;
+
+  left:50%;
+  margin-left:-50vw;
+
+  height:63px;
+
+  background:#e00000;
+
+  color:#fff;
+
+  font-family:var(--font-head);
+  font-size:56px;
+  line-height:63px;
+
+  padding-left:80px;
+
+  text-decoration:underline;
+  text-underline-offset:7px;
+}
 
   .work-block,
   .screen-two .work-block,
