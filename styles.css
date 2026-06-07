@@ -1,12 +1,20 @@
 :root{
   --black:#000;
   --white:#fff;
-  --red:#df0000;
+  --red:#e00000;
+  --green:#00cf6a;
+  --purple:#8b4dff;
+  --yellow:#ffe75a;
+  --orange:#ff7a00;
+  --gray:#8f8f8f;
+
   --font-head:"Archivo Black", Impact, Arial Black, sans-serif;
   --font-body:Georgia, "Times New Roman", serif;
 }
 
-*{ box-sizing:border-box; }
+*{
+  box-sizing:border-box;
+}
 
 html, body{
   margin:0;
@@ -17,62 +25,68 @@ html, body{
 
 body{
   font-family:var(--font-body);
+  overflow-x:hidden;
 }
 
 a{
   color:#fff;
+  text-decoration:none;
+}
+
+a:hover{
   text-decoration:underline;
 }
 
-.page{
+.screen{
   width:1365px;
-  min-height:768px;
+  height:768px;
   margin:0 auto;
   background:#000;
+  position:relative;
   overflow:hidden;
 }
 
-/* FIRST PAGE */
+/* ---------- SCREEN 1 ---------- */
 
-.page-one{
-  height:768px;
-}
-
-.top-composition{
-  height:667px;
+.screen-one{
   display:grid;
   grid-template-columns:682px 683px;
+  grid-template-rows:668px 100px;
 }
 
-.left-column{
-  padding:53px 38px 0 96px;
+.bio-side{
+  padding:50px 52px 0 100px;
 }
 
 .contact{
   text-align:right;
+  font-size:20px;
+  line-height:1.35;
   font-weight:700;
-  font-size:18px;
-  line-height:1.55;
-  margin-bottom:36px;
+  margin-bottom:30px;
 }
 
-.right-column{
-  padding-top:57px;
+.contact a{
+  text-decoration:underline;
+}
+
+.photo-side{
+  padding-top:54px;
   padding-left:0;
 }
 
-.right-column h1{
-  margin:0 0 19px 0;
+.photo-side h1{
+  margin:0 0 19px;
   font-family:var(--font-head);
   font-size:39px;
   line-height:1;
   letter-spacing:0.04em;
   color:#fff;
-  text-shadow:2px 0 #66dfff, -2px 0 #ff52c8;
+  text-shadow:2px 0 #64e6ff, -2px 0 #ff52c8;
 }
 
-.right-column img{
-  width:548px;
+.photo-side img{
+  width:550px;
   height:532px;
   object-fit:cover;
   object-position:center top;
@@ -80,23 +94,24 @@ a{
   display:block;
 }
 
-.my-work-banner{
-  height:101px;
+.work-banner{
+  grid-column:1 / 3;
+  height:100px;
   background:var(--red);
+  color:#fff;
   font-family:var(--font-head);
   font-size:86px;
-  line-height:101px;
-  padding-left:56px;
-  color:#fff;
+  line-height:100px;
+  padding-left:80px;
   text-decoration:underline;
   text-underline-offset:9px;
 }
 
-/* TIMELINE */
+/* ---------- TIMELINES ---------- */
 
 .timeline{
   position:relative;
-  padding-left:26px;
+  padding-left:31px;
 }
 
 .timeline::before{
@@ -104,7 +119,7 @@ a{
   position:absolute;
   left:0;
   top:8px;
-  bottom:18px;
+  bottom:20px;
   width:4px;
   background:#fff;
   border-radius:20px;
@@ -115,8 +130,6 @@ a{
   display:block;
   position:relative;
   margin:0 0 31px;
-  font-size:18px;
-  line-height:1.55;
   font-weight:700;
   color:#fff;
 }
@@ -125,7 +138,7 @@ a{
 .timeline a::before{
   content:"";
   position:absolute;
-  left:-34px;
+  left:-37px;
   top:3px;
   width:15px;
   height:15px;
@@ -134,112 +147,181 @@ a{
   border-radius:50%;
 }
 
-.bio-list p{
-  max-width:515px;
+.bio-timeline p{
+  font-size:19px;
+  line-height:1.43;
+  max-width:510px;
 }
 
-/* WORK PAGES */
+/* ---------- WORK TYPOGRAPHY ---------- */
 
-.work-page{
-  padding:78px 77px 40px;
-}
-
-.work-grid{
-  display:grid;
-  grid-template-columns:560px 560px;
-  column-gap:70px;
-  row-gap:56px;
-}
-
-.work-block h2{
-  margin:0 0 27px;
+.work-block h2,
+.prism-label{
+  margin:0 0 12px;
   font-family:var(--font-head);
-  font-size:23px;
+  font-size:28px;
   line-height:1;
-  letter-spacing:0.04em;
-  color:#fff;
+  letter-spacing:0.035em;
 }
 
-.work-block .timeline{
-  padding-left:23px;
+.work-timeline a{
+  font-family:var(--font-head);
+  font-size:28px;
+  line-height:1.36;
+  letter-spacing:0.005em;
+  margin-bottom:78px;
+  max-width:1120px;
 }
 
-.work-block .timeline a{
-  font-size:25px;
-  line-height:1.45;
-  margin-bottom:18px;
+.work-timeline{
+  padding-left:18px;
 }
 
-.work-block .timeline::before{
-  bottom:20px;
+.work-timeline::before{
+  left:-3px;
+  top:8px;
+  bottom:30px;
 }
 
-.reuters-page{
-  padding:90px 0 0 77px;
+.work-timeline a::before{
+  left:-29px;
+  top:2px;
+}
+
+/* ---------- SCREEN 2 ---------- */
+
+.screen-two{
+  padding:76px 0 0 81px;
+}
+
+.screen-two .work-block{
+  width:1110px;
+}
+
+.intercept{
+  margin-top:74px;
+}
+
+.prism-label{
+  position:absolute;
+  left:81px;
+  bottom:0;
+}
+
+/* ---------- SCREEN 3 ---------- */
+
+.screen-three{
+  padding:20px 0 0 81px;
+}
+
+.prism-block{
+  width:1120px;
+}
+
+.documented-block{
+  width:1120px;
+  margin-top:53px;
+}
+
+.documented-block h2{
+  margin-left:4px;
+  margin-bottom:15px;
+}
+
+.screen-three .work-timeline a{
+  margin-bottom:88px;
+}
+
+/* ---------- SCREEN 4 ---------- */
+
+.screen-four{
+  padding:116px 0 0 97px;
 }
 
 .reuters-block{
-  width:680px;
+  width:1120px;
 }
 
-.reuters-block .timeline a{
-  font-size:25px;
-  line-height:1.45;
-  margin-bottom:30px;
+.reuters-block h2{
+  margin-bottom:34px;
 }
 
-/* SMALL SCREENS */
+.reuters-block .work-timeline a{
+  margin-bottom:84px;
+}
+
+/* ---------- COLORS ---------- */
+
+.green{ color:var(--green); }
+.purple{ color:var(--purple); }
+.yellow{ color:var(--yellow); }
+.orange{ color:var(--orange); }
+.gray{ color:var(--gray); }
+
+/* ---------- RESPONSIVE FALLBACK ---------- */
 
 @media(max-width:1365px){
-  .page{
+  .screen{
     width:100%;
   }
 }
 
 @media(max-width:900px){
-  .page{
+  .screen{
+    width:100%;
     height:auto;
     min-height:100vh;
     overflow:visible;
   }
 
-  .top-composition{
-    height:auto;
+  .screen-one{
     display:flex;
-    flex-direction:column-reverse;
+    flex-direction:column;
   }
 
-  .left-column,
-  .right-column{
-    padding:30px 24px;
+  .bio-side,
+  .photo-side,
+  .screen-two,
+  .screen-three,
+  .screen-four{
+    padding:36px 24px;
   }
 
   .contact{
     text-align:left;
   }
 
-  .right-column img{
+  .photo-side img{
     width:100%;
     height:auto;
   }
 
-  .right-column h1{
-    font-size:31px;
+  .photo-side h1{
+    font-size:32px;
   }
 
-  .my-work-banner{
-    height:auto;
+  .work-banner{
     font-size:52px;
     line-height:1.1;
-    padding:18px 24px;
+    height:auto;
+    padding:20px 24px;
   }
 
-  .work-page,
-  .reuters-page{
-    padding:55px 24px;
+  .work-block,
+  .screen-two .work-block,
+  .prism-block,
+  .documented-block,
+  .reuters-block{
+    width:100%;
   }
 
-  .work-grid{
-    grid-template-columns:1fr;
+  .work-timeline a{
+    font-size:24px;
+    margin-bottom:40px;
+  }
+
+  .prism-label{
+    position:static;
+    margin-top:40px;
   }
 }
