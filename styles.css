@@ -1,224 +1,123 @@
-:root{
-  --black:#000;
-  --white:#fff;
-  --red:#df0000;
-  --font-head:"Archivo Black", Impact, Arial Black, sans-serif;
-  --font-body:Georgia, "Times New Roman", serif;
-}
-
-*{ box-sizing:border-box; }
-
-html,body{
+body{
   margin:0;
-  padding:0;
   background:#000;
   color:#fff;
+  font-family:Georgia, serif;
 }
 
-body{
-  font-family:var(--font-body);
-  overflow-x:hidden;
-}
-
-a{
-  color:inherit;
-  text-decoration:underline;
-}
-
-/* overall page */
-.screen{
-  width:100%;
-  background:#000;
-}
-
-/* first PDF page: black area + red MY WORK band */
-.hero-screen{
-  position:relative;
-  width:1024px;
+.page-1{
+  width:1365px;
   height:768px;
+
   margin:0 auto;
+
   display:grid;
-  grid-template-columns:512px 512px;
-  background:#000;
-  overflow:hidden;
-  padding-top:54px;
+  grid-template-columns:685px 680px;
 }
 
-/* left bio column */
-.bio-panel{
-  padding-left:77px;
-  padding-right:36px;
+.left{
+  padding-top:25px;
+  padding-left:70px;
 }
 
 .contact{
   text-align:right;
-  font-weight:700;
-  font-size:16px;
-  line-height:1.55;
-  margin-bottom:33px;
+  margin-right:25px;
+
+  font-size:18px;
+  font-weight:bold;
 }
 
-.bio-timeline{
-  padding-left:21px;
-}
-
-/* right image column */
-.photo-panel{
-  position:relative;
-  width:412px;
-  height:588px;
-  padding-top:55px;
-}
-
-.photo-panel h1{
-  position:absolute;
-  top:0;
-  left:0;
-  margin:0;
-  font-family:var(--font-head);
-  font-size:37px;
-  line-height:1;
-  letter-spacing:.025em;
-  white-space:nowrap;
-  color:#fff;
-  text-shadow:2px 0 #5ee3ff, -2px 0 #ff5ccf;
-}
-
-.photo-panel img{
-  width:412px;
-  height:532px;
-  object-fit:cover;
-  object-position:center top;
-  filter:grayscale(100%);
-  display:block;
-}
-
-/* timeline */
 .timeline{
   position:relative;
-  padding-left:21px;
+  margin-top:35px;
+  padding-left:40px;
 }
 
-.timeline::before{
+.timeline:before{
   content:"";
+
   position:absolute;
-  left:0;
-  top:7px;
-  bottom:23px;
+
+  left:10px;
+  top:0;
+  bottom:0;
+
   width:4px;
   background:#fff;
-  border-radius:10px;
 }
 
-.timeline p,
-.timeline a{
+.item{
   position:relative;
-  display:block;
-  margin:0 0 31px;
-  font-size:16px;
+
+  width:520px;
+
+  margin-bottom:35px;
+
+  font-size:22px;
   line-height:1.55;
-  font-weight:700;
-  color:#fff;
 }
 
-.timeline p::before,
-.timeline a::before{
+.item:before{
   content:"";
+
   position:absolute;
-  left:-29px;
-  top:2px;
+
+  left:-39px;
+  top:4px;
+
   width:14px;
   height:14px;
-  border:4px solid #fff;
-  background:#000;
+
+  border:4px solid white;
   border-radius:50%;
 }
 
-.bio-timeline p{
-  max-width:390px;
+.right{
+  position:relative;
 }
 
-/* red MY WORK banner from PDF */
-.hero-screen::after{
-  content:"MY WORK";
+.right h1{
   position:absolute;
-  left:0;
-  bottom:0;
-  width:1024px;
-  height:101px;
-  background:var(--red);
-  color:#fff;
-  font-family:var(--font-head);
-  font-size:84px;
+
+  top:35px;
+  left:35px;
+
+  margin:0;
+
+  font-family:"Archivo Black", sans-serif;
+
+  font-size:44px;
+}
+
+.right img{
+  position:absolute;
+
+  left:35px;
+  top:110px;
+
+  width:590px;
+  height:530px;
+
+  object-fit:cover;
+  filter:grayscale(100%);
+}
+
+.work-banner{
+  width:1365px;
+  height:100px;
+
+  margin:0 auto;
+
+  background:#d60000;
+
+  font-family:"Archivo Black", sans-serif;
+
+  font-size:92px;
+
+  padding-left:55px;
+
   line-height:100px;
-  padding-left:56px;
+
   text-decoration:underline;
-  text-underline-offset:9px;
-}
-
-/* work pages */
-.work-screen{
-  width:1024px;
-  margin:0 auto;
-  min-height:768px;
-  padding:72px 76px 40px;
-  background:#000;
-}
-
-.work-screen h2{
-  display:none;
-}
-
-.work-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  column-gap:70px;
-  row-gap:54px;
-}
-
-.work-block h3{
-  margin:0 0 26px;
-  font-family:var(--font-head);
-  font-size:22px;
-  line-height:1;
-  letter-spacing:.03em;
-  color:#fff !important;
-}
-
-.work-block .timeline a{
-  font-size:22px;
-  line-height:1.45;
-  margin-bottom:18px;
-}
-
-/* Reuters */
-.reuters-screen{
-  width:1024px;
-  margin:0 auto;
-  min-height:768px;
-  padding:90px 0 0 76px;
-  background:#000;
-}
-
-.reuters-block{
-  width:680px;
-}
-
-.reuters-block .timeline a{
-  font-size:22px;
-  line-height:1.45;
-  margin-bottom:28px;
-}
-
-.green,.purple,.yellow,.orange,.gray{
-  color:#fff !important;
-}
-
-/* mobile fallback */
-@media(max-width:1024px){
-  .hero-screen,
-  .work-screen,
-  .reuters-screen{
-    width:100%;
-  }
 }
