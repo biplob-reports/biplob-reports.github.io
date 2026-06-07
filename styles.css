@@ -1,15 +1,14 @@
 :root{
   --black:#000;
   --white:#fff;
-  --red:#e00000;
-
-  --font-head:"Archivo Black", Arial Black, Impact, sans-serif;
+  --red:#df0000;
+  --font-head:"Archivo Black", Impact, Arial Black, sans-serif;
   --font-body:Georgia, "Times New Roman", serif;
 }
 
 *{ box-sizing:border-box; }
 
-html, body{
+html,body{
   margin:0;
   padding:0;
   background:#000;
@@ -23,31 +22,32 @@ body{
 
 a{
   color:inherit;
-  text-decoration:none;
-}
-
-a:hover{
   text-decoration:underline;
 }
 
+/* overall page */
 .screen{
-  width:100vw;
+  width:100%;
   background:#000;
 }
 
-/* PAGE 1 */
-
+/* first PDF page: black area + red MY WORK band */
 .hero-screen{
-  height:667px;
+  position:relative;
+  width:1024px;
+  height:768px;
+  margin:0 auto;
   display:grid;
   grid-template-columns:512px 512px;
-  justify-content:center;
-  column-gap:0;
+  background:#000;
+  overflow:hidden;
   padding-top:54px;
 }
 
+/* left bio column */
 .bio-panel{
-  padding:0 35px 0 76px;
+  padding-left:77px;
+  padding-right:36px;
 }
 
 .contact{
@@ -55,18 +55,18 @@ a:hover{
   font-weight:700;
   font-size:16px;
   line-height:1.55;
-  margin-bottom:34px;
+  margin-bottom:33px;
 }
 
-.contact a{
-  text-decoration:underline;
+.bio-timeline{
+  padding-left:21px;
 }
 
+/* right image column */
 .photo-panel{
+  position:relative;
   width:412px;
   height:588px;
-  position:relative;
-  overflow:visible;
   padding-top:55px;
 }
 
@@ -78,12 +78,10 @@ a:hover{
   font-family:var(--font-head);
   font-size:37px;
   line-height:1;
-  letter-spacing:0.035em;
-  color:#fff4ff;
-  text-shadow:
-    2px 0 #3fd4ff,
-    -2px 0 #ff4fc3;
+  letter-spacing:.025em;
   white-space:nowrap;
+  color:#fff;
+  text-shadow:2px 0 #5ee3ff, -2px 0 #ff5ccf;
 }
 
 .photo-panel img{
@@ -95,19 +93,18 @@ a:hover{
   display:block;
 }
 
-/* TIMELINE */
-
+/* timeline */
 .timeline{
   position:relative;
-  padding-left:22px;
+  padding-left:21px;
 }
 
 .timeline::before{
   content:"";
   position:absolute;
   left:0;
-  top:8px;
-  bottom:22px;
+  top:7px;
+  bottom:23px;
   width:4px;
   background:#fff;
   border-radius:10px;
@@ -115,12 +112,12 @@ a:hover{
 
 .timeline p,
 .timeline a{
-  display:block;
   position:relative;
+  display:block;
   margin:0 0 31px;
-  font-weight:700;
   font-size:16px;
   line-height:1.55;
+  font-weight:700;
   color:#fff;
 }
 
@@ -129,7 +126,7 @@ a:hover{
   content:"";
   position:absolute;
   left:-29px;
-  top:3px;
+  top:2px;
   width:14px;
   height:14px;
   border:4px solid #fff;
@@ -141,30 +138,31 @@ a:hover{
   max-width:390px;
 }
 
-/* MY WORK RED BANNER */
-
+/* red MY WORK banner from PDF */
 .hero-screen::after{
   content:"MY WORK";
   position:absolute;
   left:0;
-  top:667px;
-  width:100vw;
+  bottom:0;
+  width:1024px;
   height:101px;
   background:var(--red);
   color:#fff;
   font-family:var(--font-head);
-  font-size:83px;
-  line-height:101px;
-  padding-left:55px;
+  font-size:84px;
+  line-height:100px;
+  padding-left:56px;
   text-decoration:underline;
-  text-underline-offset:10px;
+  text-underline-offset:9px;
 }
 
-/* PAGE 2+ WORK */
-
+/* work pages */
 .work-screen{
+  width:1024px;
+  margin:0 auto;
   min-height:768px;
-  padding:72px 78px 40px;
+  padding:72px 76px 40px;
+  background:#000;
 }
 
 .work-screen h2{
@@ -174,10 +172,8 @@ a:hover{
 .work-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  column-gap:72px;
+  column-gap:70px;
   row-gap:54px;
-  max-width:1120px;
-  margin:0 auto;
 }
 
 .work-block h3{
@@ -185,18 +181,8 @@ a:hover{
   font-family:var(--font-head);
   font-size:22px;
   line-height:1;
-  letter-spacing:0.04em;
-  color:#fff;
-}
-
-.work-block .timeline{
-  padding-left:21px;
-}
-
-.work-block .timeline::before{
-  left:0;
-  top:9px;
-  bottom:18px;
+  letter-spacing:.03em;
+  color:#fff !important;
 }
 
 .work-block .timeline a{
@@ -205,29 +191,17 @@ a:hover{
   margin-bottom:18px;
 }
 
-.work-block .timeline a::before{
-  left:-29px;
-  top:3px;
-}
-
-/* REUTERS PAGE */
-
+/* Reuters */
 .reuters-screen{
+  width:1024px;
+  margin:0 auto;
   min-height:768px;
-  padding:90px 0 0 78px;
+  padding:90px 0 0 76px;
+  background:#000;
 }
 
 .reuters-block{
   width:680px;
-}
-
-.reuters-block h3{
-  margin-bottom:34px;
-  color:#fff;
-}
-
-.reuters-block .timeline{
-  padding-left:21px;
 }
 
 .reuters-block .timeline a{
@@ -236,72 +210,15 @@ a:hover{
   margin-bottom:28px;
 }
 
-/* Override old colors from previous version */
-.green,
-.purple,
-.yellow,
-.orange,
-.gray{
-  color:#fff;
+.green,.purple,.yellow,.orange,.gray{
+  color:#fff !important;
 }
 
-/* MOBILE */
-
-@media(max-width:900px){
-  .hero-screen{
-    height:auto;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column-reverse;
-    padding:30px 24px;
-  }
-
-  .hero-screen::after{
-    position:relative;
-    top:auto;
-    left:auto;
-    display:block;
-    margin:30px -24px 0;
-    width:calc(100% + 48px);
-    height:auto;
-    font-size:48px;
-    line-height:1.2;
-    padding:18px 24px;
-  }
-
-  .bio-panel{
-    padding:0;
-  }
-
-  .contact{
-    text-align:left;
-  }
-
-  .photo-panel{
-    width:100%;
-    height:auto;
-    padding-top:50px;
-  }
-
-  .photo-panel img{
-    width:100%;
-    height:auto;
-  }
-
-  .photo-panel h1{
-    font-size:31px;
-  }
-
+/* mobile fallback */
+@media(max-width:1024px){
+  .hero-screen,
   .work-screen,
   .reuters-screen{
-    padding:60px 24px;
-  }
-
-  .work-grid{
-    grid-template-columns:1fr;
-  }
-
-  .reuters-block{
     width:100%;
   }
 }
