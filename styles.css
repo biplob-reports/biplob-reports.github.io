@@ -1,19 +1,13 @@
 :root{
   --black:#000;
   --white:#fff;
-  --green:#00cf6a;
-  --purple:#8b4dff;
-  --yellow:#ffe45c;
-  --orange:#ff7a00;
-  --gray:#8d8d8d;
+  --red:#e00000;
 
   --font-head:"Archivo Black", Arial Black, Impact, sans-serif;
   --font-body:Georgia, "Times New Roman", serif;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
 html, body{
   margin:0;
@@ -36,35 +30,32 @@ a:hover{
   text-decoration:underline;
 }
 
-/* every screenshot-sized panel */
 .screen{
   width:100vw;
-  height:768px;
-  min-height:768px;
   background:#000;
-  overflow:hidden;
 }
 
-/* =======================
-   PAGE 1
-======================= */
+/* PAGE 1 */
 
 .hero-screen{
+  height:667px;
   display:grid;
-  grid-template-columns:685px 680px;
+  grid-template-columns:512px 512px;
+  justify-content:center;
+  column-gap:0;
+  padding-top:54px;
 }
 
 .bio-panel{
-  padding:24px 27px 0 72px;
-  height:768px;
+  padding:0 35px 0 76px;
 }
 
 .contact{
   text-align:right;
   font-weight:700;
-  font-size:13px;
-  line-height:1.35;
-  margin-bottom:31px;
+  font-size:16px;
+  line-height:1.55;
+  margin-bottom:34px;
 }
 
 .contact a{
@@ -72,62 +63,64 @@ a:hover{
 }
 
 .photo-panel{
+  width:412px;
+  height:588px;
   position:relative;
-  height:668px;
-  width:580px;
-  overflow:hidden;
-}
-
-.photo-panel img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center center;
-  filter:grayscale(100%);
-  display:block;
+  overflow:visible;
+  padding-top:55px;
 }
 
 .photo-panel h1{
   position:absolute;
-  top:31px;
-  left:31px;
+  top:0;
+  left:0;
   margin:0;
   font-family:var(--font-head);
-  font-size:40px;
+  font-size:37px;
   line-height:1;
-  letter-spacing:0.09em;
-  color:#f5eaff;
+  letter-spacing:0.035em;
+  color:#fff4ff;
+  text-shadow:
+    2px 0 #3fd4ff,
+    -2px 0 #ff4fc3;
   white-space:nowrap;
 }
 
-/* =======================
-   TIMELINE
-======================= */
+.photo-panel img{
+  width:412px;
+  height:532px;
+  object-fit:cover;
+  object-position:center top;
+  filter:grayscale(100%);
+  display:block;
+}
+
+/* TIMELINE */
 
 .timeline{
   position:relative;
-  padding-left:34px;
+  padding-left:22px;
 }
 
 .timeline::before{
   content:"";
   position:absolute;
-  left:8px;
-  top:10px;
-  bottom:15px;
+  left:0;
+  top:8px;
+  bottom:22px;
   width:4px;
   background:#fff;
-  border-radius:8px;
+  border-radius:10px;
 }
 
 .timeline p,
 .timeline a{
   display:block;
   position:relative;
-  margin:0 0 28px;
+  margin:0 0 31px;
   font-weight:700;
-  font-size:18px;
-  line-height:1.45;
+  font-size:16px;
+  line-height:1.55;
   color:#fff;
 }
 
@@ -135,65 +128,81 @@ a:hover{
 .timeline a::before{
   content:"";
   position:absolute;
-  left:-35px;
+  left:-29px;
   top:3px;
-  width:16px;
-  height:16px;
+  width:14px;
+  height:14px;
   border:4px solid #fff;
   background:#000;
   border-radius:50%;
 }
 
 .bio-timeline p{
-  max-width:565px;
+  max-width:390px;
 }
 
-/* =======================
-   PAGE 2
-======================= */
+/* MY WORK RED BANNER */
+
+.hero-screen::after{
+  content:"MY WORK";
+  position:absolute;
+  left:0;
+  top:667px;
+  width:100vw;
+  height:101px;
+  background:var(--red);
+  color:#fff;
+  font-family:var(--font-head);
+  font-size:83px;
+  line-height:101px;
+  padding-left:55px;
+  text-decoration:underline;
+  text-underline-offset:10px;
+}
+
+/* PAGE 2+ WORK */
 
 .work-screen{
-  padding:77px 76px 0 77px;
+  min-height:768px;
+  padding:72px 78px 40px;
 }
 
 .work-screen h2{
-  margin:0 0 34px;
-  font-family:var(--font-head);
-  font-size:22px;
-  line-height:1;
-  letter-spacing:0.02em;
+  display:none;
 }
 
 .work-grid{
   display:grid;
-  grid-template-columns:560px 560px;
-  column-gap:68px;
-  row-gap:43px;
+  grid-template-columns:1fr 1fr;
+  column-gap:72px;
+  row-gap:54px;
+  max-width:1120px;
+  margin:0 auto;
 }
 
 .work-block h3{
-  margin:0 0 29px;
+  margin:0 0 26px;
   font-family:var(--font-head);
   font-size:22px;
   line-height:1;
-  letter-spacing:0.045em;
+  letter-spacing:0.04em;
+  color:#fff;
 }
 
 .work-block .timeline{
-  padding-left:22px;
+  padding-left:21px;
 }
 
 .work-block .timeline::before{
   left:0;
-  top:10px;
-  bottom:14px;
-  width:4px;
+  top:9px;
+  bottom:18px;
 }
 
 .work-block .timeline a{
-  font-size:25px;
+  font-size:22px;
   line-height:1.45;
-  margin-bottom:6px;
+  margin-bottom:18px;
 }
 
 .work-block .timeline a::before{
@@ -201,107 +210,98 @@ a:hover{
   top:3px;
 }
 
-/* =======================
-   PAGE 3
-======================= */
+/* REUTERS PAGE */
 
 .reuters-screen{
-  padding:79px 0 0 77px;
+  min-height:768px;
+  padding:90px 0 0 78px;
 }
 
 .reuters-block{
-  width:650px;
+  width:680px;
 }
 
 .reuters-block h3{
-  margin-bottom:37px;
+  margin-bottom:34px;
+  color:#fff;
 }
 
 .reuters-block .timeline{
-  padding-left:17px;
-}
-
-.reuters-block .timeline::before{
-  left:0;
-  top:8px;
-  bottom:45px;
+  padding-left:21px;
 }
 
 .reuters-block .timeline a{
-  font-size:25px;
+  font-size:22px;
   line-height:1.45;
-  margin-bottom:31px;
+  margin-bottom:28px;
 }
 
-.reuters-block .timeline a::before{
-  left:-28px;
-  top:3px;
+/* Override old colors from previous version */
+.green,
+.purple,
+.yellow,
+.orange,
+.gray{
+  color:#fff;
 }
 
-/* =======================
-   COLORS
-======================= */
+/* MOBILE */
 
-.green{ color:var(--green); }
-.purple{ color:var(--purple); }
-.yellow{ color:var(--yellow); }
-.orange{ color:var(--orange); }
-.gray{ color:var(--gray); }
-
-/* =======================
-   RESPONSIVE FALLBACK
-======================= */
-
-@media (max-width:1100px){
-  .screen{
+@media(max-width:900px){
+  .hero-screen{
     height:auto;
     min-height:100vh;
-    overflow:visible;
-  }
-
-  .hero-screen{
     display:flex;
     flex-direction:column-reverse;
+    padding:30px 24px;
   }
 
-  .photo-panel{
-    width:100%;
-    height:520px;
+  .hero-screen::after{
+    position:relative;
+    top:auto;
+    left:auto;
+    display:block;
+    margin:30px -24px 0;
+    width:calc(100% + 48px);
+    height:auto;
+    font-size:48px;
+    line-height:1.2;
+    padding:18px 24px;
   }
 
   .bio-panel{
-    height:auto;
-    padding:28px 24px 50px;
+    padding:0;
   }
 
   .contact{
     text-align:left;
   }
 
-  .work-screen,
-  .reuters-screen{
-    padding:56px 24px;
-  }
-
-  .work-grid{
-    grid-template-columns:1fr;
-    row-gap:42px;
-  }
-
-  .work-block,
-  .reuters-block{
+  .photo-panel{
     width:100%;
+    height:auto;
+    padding-top:50px;
+  }
+
+  .photo-panel img{
+    width:100%;
+    height:auto;
   }
 
   .photo-panel h1{
     font-size:31px;
-    left:24px;
   }
 
-  .timeline p,
-  .timeline a,
-  .work-block .timeline a,
-  .reuters-block .timeline a{
-    font-size:20px;
+  .work-screen,
+  .reuters-screen{
+    padding:60px 24px;
+  }
+
+  .work-grid{
+    grid-template-columns:1fr;
+  }
+
+  .reuters-block{
+    width:100%;
   }
 }
