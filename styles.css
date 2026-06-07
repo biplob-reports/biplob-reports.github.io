@@ -1,123 +1,245 @@
-body{
+:root{
+  --black:#000;
+  --white:#fff;
+  --red:#df0000;
+  --font-head:"Archivo Black", Impact, Arial Black, sans-serif;
+  --font-body:Georgia, "Times New Roman", serif;
+}
+
+*{ box-sizing:border-box; }
+
+html, body{
   margin:0;
+  padding:0;
   background:#000;
   color:#fff;
-  font-family:Georgia, serif;
 }
 
-.page-1{
+body{
+  font-family:var(--font-body);
+}
+
+a{
+  color:#fff;
+  text-decoration:underline;
+}
+
+.page{
   width:1365px;
-  height:768px;
-
+  min-height:768px;
   margin:0 auto;
-
-  display:grid;
-  grid-template-columns:685px 680px;
+  background:#000;
+  overflow:hidden;
 }
 
-.left{
-  padding-top:25px;
-  padding-left:70px;
+/* FIRST PAGE */
+
+.page-one{
+  height:768px;
+}
+
+.top-composition{
+  height:667px;
+  display:grid;
+  grid-template-columns:682px 683px;
+}
+
+.left-column{
+  padding:53px 38px 0 96px;
 }
 
 .contact{
   text-align:right;
-  margin-right:25px;
-
+  font-weight:700;
   font-size:18px;
-  font-weight:bold;
+  line-height:1.55;
+  margin-bottom:36px;
 }
+
+.right-column{
+  padding-top:57px;
+  padding-left:0;
+}
+
+.right-column h1{
+  margin:0 0 19px 0;
+  font-family:var(--font-head);
+  font-size:39px;
+  line-height:1;
+  letter-spacing:0.04em;
+  color:#fff;
+  text-shadow:2px 0 #66dfff, -2px 0 #ff52c8;
+}
+
+.right-column img{
+  width:548px;
+  height:532px;
+  object-fit:cover;
+  object-position:center top;
+  filter:grayscale(100%);
+  display:block;
+}
+
+.my-work-banner{
+  height:101px;
+  background:var(--red);
+  font-family:var(--font-head);
+  font-size:86px;
+  line-height:101px;
+  padding-left:56px;
+  color:#fff;
+  text-decoration:underline;
+  text-underline-offset:9px;
+}
+
+/* TIMELINE */
 
 .timeline{
   position:relative;
-  margin-top:35px;
-  padding-left:40px;
+  padding-left:26px;
 }
 
-.timeline:before{
+.timeline::before{
   content:"";
-
   position:absolute;
-
-  left:10px;
-  top:0;
-  bottom:0;
-
+  left:0;
+  top:8px;
+  bottom:18px;
   width:4px;
   background:#fff;
+  border-radius:20px;
 }
 
-.item{
+.timeline p,
+.timeline a{
+  display:block;
   position:relative;
-
-  width:520px;
-
-  margin-bottom:35px;
-
-  font-size:22px;
+  margin:0 0 31px;
+  font-size:18px;
   line-height:1.55;
+  font-weight:700;
+  color:#fff;
 }
 
-.item:before{
+.timeline p::before,
+.timeline a::before{
   content:"";
-
   position:absolute;
-
-  left:-39px;
-  top:4px;
-
-  width:14px;
-  height:14px;
-
-  border:4px solid white;
+  left:-34px;
+  top:3px;
+  width:15px;
+  height:15px;
+  border:4px solid #fff;
+  background:#000;
   border-radius:50%;
 }
 
-.right{
-  position:relative;
+.bio-list p{
+  max-width:515px;
 }
 
-.right h1{
-  position:absolute;
+/* WORK PAGES */
 
-  top:35px;
-  left:35px;
-
-  margin:0;
-
-  font-family:"Archivo Black", sans-serif;
-
-  font-size:44px;
+.work-page{
+  padding:78px 77px 40px;
 }
 
-.right img{
-  position:absolute;
-
-  left:35px;
-  top:110px;
-
-  width:590px;
-  height:530px;
-
-  object-fit:cover;
-  filter:grayscale(100%);
+.work-grid{
+  display:grid;
+  grid-template-columns:560px 560px;
+  column-gap:70px;
+  row-gap:56px;
 }
 
-.work-banner{
-  width:1365px;
-  height:100px;
+.work-block h2{
+  margin:0 0 27px;
+  font-family:var(--font-head);
+  font-size:23px;
+  line-height:1;
+  letter-spacing:0.04em;
+  color:#fff;
+}
 
-  margin:0 auto;
+.work-block .timeline{
+  padding-left:23px;
+}
 
-  background:#d60000;
+.work-block .timeline a{
+  font-size:25px;
+  line-height:1.45;
+  margin-bottom:18px;
+}
 
-  font-family:"Archivo Black", sans-serif;
+.work-block .timeline::before{
+  bottom:20px;
+}
 
-  font-size:92px;
+.reuters-page{
+  padding:90px 0 0 77px;
+}
 
-  padding-left:55px;
+.reuters-block{
+  width:680px;
+}
 
-  line-height:100px;
+.reuters-block .timeline a{
+  font-size:25px;
+  line-height:1.45;
+  margin-bottom:30px;
+}
 
-  text-decoration:underline;
+/* SMALL SCREENS */
+
+@media(max-width:1365px){
+  .page{
+    width:100%;
+  }
+}
+
+@media(max-width:900px){
+  .page{
+    height:auto;
+    min-height:100vh;
+    overflow:visible;
+  }
+
+  .top-composition{
+    height:auto;
+    display:flex;
+    flex-direction:column-reverse;
+  }
+
+  .left-column,
+  .right-column{
+    padding:30px 24px;
+  }
+
+  .contact{
+    text-align:left;
+  }
+
+  .right-column img{
+    width:100%;
+    height:auto;
+  }
+
+  .right-column h1{
+    font-size:31px;
+  }
+
+  .my-work-banner{
+    height:auto;
+    font-size:52px;
+    line-height:1.1;
+    padding:18px 24px;
+  }
+
+  .work-page,
+  .reuters-page{
+    padding:55px 24px;
+  }
+
+  .work-grid{
+    grid-template-columns:1fr;
+  }
 }
