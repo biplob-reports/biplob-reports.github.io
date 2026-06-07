@@ -12,9 +12,7 @@
   --font-body:Georgia, "Times New Roman", serif;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
 html, body{
   margin:0;
@@ -33,9 +31,7 @@ a{
   text-decoration:none;
 }
 
-a:hover{
-  text-decoration:underline;
-}
+a:hover{ text-decoration:underline; }
 
 .screen{
   width:1365px;
@@ -46,7 +42,7 @@ a:hover{
   overflow:hidden;
 }
 
-/* ---------- SCREEN 1 ---------- */
+/* SCREEN 1 */
 
 .screen-one{
   display:grid;
@@ -63,12 +59,10 @@ a:hover{
   font-size:20px;
   line-height:1.35;
   font-weight:700;
-  margin-bottom:30px;
+  margin-bottom:28px;
 }
 
-.contact a{
-  text-decoration:underline;
-}
+.contact a{ text-decoration:underline; }
 
 .photo-side{
   padding-top:54px;
@@ -100,14 +94,14 @@ a:hover{
   background:var(--red);
   color:#fff;
   font-family:var(--font-head);
-  font-size:86px;
+  font-size:56px;
   line-height:63px;
   padding-left:80px;
   text-decoration:underline;
-  text-underline-offset:9px;
+  text-underline-offset:7px;
 }
 
-/* ---------- TIMELINES ---------- */
+/* TIMELINE */
 
 .timeline{
   position:relative;
@@ -148,12 +142,13 @@ a:hover{
 }
 
 .bio-timeline p{
-  font-size:19px;
-  line-height:1.43;
+  font-size:18px;
+  line-height:1.42;
   max-width:510px;
+  margin-bottom:25px;
 }
 
-/* ---------- WORK TYPOGRAPHY ---------- */
+/* WORK TYPOGRAPHY */
 
 .work-block h2,
 .prism-label{
@@ -162,15 +157,6 @@ a:hover{
   font-size:28px;
   line-height:1;
   letter-spacing:0.035em;
-}
-
-.work-timeline a{
-  font-family:var(--font-head);
-  font-size:28px;
-  line-height:1.36;
-  letter-spacing:0.005em;
-  margin-bottom:78px;
-  max-width:1120px;
 }
 
 .work-timeline{
@@ -183,12 +169,21 @@ a:hover{
   bottom:30px;
 }
 
+.work-timeline a{
+  font-family:var(--font-head);
+  font-size:28px;
+  line-height:1.36;
+  letter-spacing:0.005em;
+  margin-bottom:78px;
+  max-width:1120px;
+}
+
 .work-timeline a::before{
   left:-29px;
   top:2px;
 }
 
-/* ---------- SCREEN 2 ---------- */
+/* SCREEN 2 */
 
 .screen-two{
   padding:76px 0 0 81px;
@@ -208,18 +203,18 @@ a:hover{
   bottom:0;
 }
 
-/* ---------- SCREEN 3 ---------- */
+/* SCREEN 3 */
 
 .screen-three{
   padding:20px 0 0 81px;
 }
 
-.prism-block{
+.prism-block,
+.documented-block{
   width:1120px;
 }
 
 .documented-block{
-  width:1120px;
   margin-top:53px;
 }
 
@@ -232,7 +227,7 @@ a:hover{
   margin-bottom:88px;
 }
 
-/* ---------- SCREEN 4 ---------- */
+/* SCREEN 4 */
 
 .screen-four{
   padding:116px 0 0 97px;
@@ -250,7 +245,7 @@ a:hover{
   margin-bottom:84px;
 }
 
-/* ---------- COLORS ---------- */
+/* COLORS */
 
 .green{ color:var(--green); }
 .purple{ color:var(--purple); }
@@ -258,7 +253,7 @@ a:hover{
 .orange{ color:var(--orange); }
 .gray{ color:var(--gray); }
 
-/* ---------- RESPONSIVE FALLBACK ---------- */
+/* RESPONSIVE */
 
 @media(max-width:1365px){
   .screen{
