@@ -259,3 +259,26 @@ a:hover{ text-decoration:underline; }
     margin-bottom:34px;
   }
 }
+.documented-reuters-screen{
+  padding-top:58px;
+}
+
+.documented-reuters-screen .work-block{
+  width:1120px;
+}
+
+.documented-reuters-screen .compact a{
+  font-size:20px;
+  line-height:1.22;
+  margin-bottom:24px;
+}
+
+.reuters-inline{
+  margin-top:44px;
+}
+
+.reuters-inline .work-timeline a{
+  font-size:26px;
+  line-height:1.28;
+  margin-bottom:36px;
+}
